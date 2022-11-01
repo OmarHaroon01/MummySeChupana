@@ -7,6 +7,7 @@
     tools:context=".LoginActivity"
     android:background="#BBE4EA">
 
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="150dp"
@@ -32,12 +33,15 @@
         android:shadowDy="5"
         android:shadowRadius="1.6"
         />
-    <Button
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/google_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login with google"
-        android:layout_below="@+id/app_name"
-        android:layout_centerHorizontal="true"
-        />
+        android:layout_below="@id/app_name"
+        app:buttonSize="wide"
+        android:layout_centerHorizontal="true"/>
+
+
 
 </RelativeLayout>
