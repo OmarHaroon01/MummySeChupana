@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "598256112498",
+    "firebase_url": "https://mummy-se-chupana-default-rtdb.firebaseio.com",
+    "project_id": "mummy-se-chupana",
+    "storage_bucket": "mummy-se-chupana.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598256112498:android:3ae8eb59ed4454efce03eb",
+        "android_client_info": {
+          "package_name": "com.ttv.facedemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "598256112498-5rmostj9n5novcupvdnclbugdgotlosv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNARyDun80KrWfzw3VecYCJS2QW8CkdB0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "598256112498-5rmostj9n5novcupvdnclbugdgotlosv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

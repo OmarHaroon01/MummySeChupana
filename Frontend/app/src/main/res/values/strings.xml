@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Mummy Se Chupana</string>
+
+    <string name="name_should_not_be_empty">Please input name.</string>
+    <string name="duplicated_name">Duplicated name!</string>
+
+    <string name="pdf_page_counter">%d / %d</string>
+    <string name="server_client_id">226066860239-ofbto5dillvaiogdjp8m34nv29tmig04.apps.googleusercontent.com</string>
+</resources>
