@@ -5,7 +5,7 @@ const path = require("path");
 
 //Used for default registration
 router.post("/register", async (req, res) => {
-  const result = await Users.findOne({
+  const result = await Users.findOne({ 
     where: { email: req.body.email },
   });
   if (result === null) {
