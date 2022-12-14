@@ -1,0 +1,42 @@
+1. What is Arduino?
+c) Open-source electronics platform
+
+3. What language is a typical Arduino code based on?
+d) C/C++
+
+5. What language is the Arduino IDE built on?
+a) Java 
+
+8. Arduino Codes are referred to as __ in the Arduino IDE.
+a) sketches
+
+14. What is the microcontroller used in Arduino UNO?
+d) ATmega328p
+
+22. What is the operating voltage of Atmega328?
+b) 1.8V to 5.5V
+
+24. Is the Arduino code an Object-Oriented programming language or a Procedural programming language?
+c) The Arduino Code follows the object oriented ideology
+
+25. What is the difference between an IDE and a compiler?
+a) The compiler executes the code while the IDE gives a graphical environment for writing the cod
+
+30. What is the output of “pin1” if “pin2” is sent “1011” where 1 is 5V and 0 is 0V?
+int pin1 = 12;
+int pin2 = 11;
+void setup() {
+    pinMode(12, OUTPUT);
+    pinMode(pin2, INPUT);
+    Serial.begin(9600);
+}
+void loop() {
+    if(digitalRead(pin2)==1) {
+        digitalWrite(pin1,LOW);
+    }
+    else if(digitalRead(pin2)==0) {
+        digitalWrite(pin1,HIGH);
+    }
+}
+
+b) 0100

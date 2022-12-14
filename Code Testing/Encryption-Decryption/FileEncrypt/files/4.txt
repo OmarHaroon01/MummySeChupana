@@ -1,0 +1,26 @@
+Screen lock:
+D/ViewRootImpl[MainActivity]: windowFocusChanged hasFocus=false inTouchMode=true
+
+Screen unlock:
+D/DecorView: onWindowFocusChangedFromViewRoot hasFocus: true, DecorView@2d130fd[MainActivity]
+D/ViewRootImpl[MainActivity]: windowFocusChanged hasFocus=true inTouchMode=true
+	--  restart & resume
+
+
+Going out of app:
+V/FA: Activity paused, time: 123783796
+D/FA: Application going to the background
+
+Re-entering the app:
+Activity resumed, time: 123843462
+D/ActivityThread: pid:19162 tid:19162 doframe Callback
+	-- restart & resume
+
+Going to another app:
+D/ViewRootImpl[MainActivity]: windowFocusChanged hasFocus=false inTouchMode=true
+V/FA: Activity paused, time: 123945455
+
+Back to app:
+D/DecorView: onWindowFocusChangedFromViewRoot hasFocus: true, DecorView@2d130fd[MainActivity]
+D/ViewRootImpl[MainActivity]: windowFocusChanged hasFocus=true inTouchMode=true
+	-- restart & resume
