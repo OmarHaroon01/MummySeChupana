@@ -51,6 +51,7 @@ class CameraActivity : AppCompatActivity() {
                 var drawInfoList = ArrayList<FaceRectView.DrawInfo>();
                 var detectionResult = msg.obj as ArrayList<FaceResult>
 
+                // face anti spoofing code
                 for(faceResult in detectionResult) {
                     var rect : Rect = faceRectTransformer!!.adjustRect(faceResult.rect);
                     var drawInfo : FaceRectView.DrawInfo;

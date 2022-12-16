@@ -181,7 +181,8 @@ public class HomepageActivity extends AppCompatActivity {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                                if (mList.get(position).getMimeType().contains("google-apps.folder")) { // if folder then shows that folder's content
+                                if (mList.get(position).getMimeType().contains("google-apps.folder")) {
+                                    // if folder then shows that folder's content
                                     Intent intent = new Intent(HomepageActivity.this, HomepageActivity.class);
                                     intent.putExtra("Q", "'" + mList.get(position).getId()+ "'" +" in parents and trashed=false");
                                     intent.putExtra("folderName", mList.get(position).getName());
@@ -233,8 +234,6 @@ public class HomepageActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Log.d("mgss", "error?");
-//                Toast.makeText(HomepageActivity.this, "hello", Toast.LENGTH_SHORT).show();
                 getPermission();
 
             }
