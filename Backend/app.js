@@ -4,6 +4,7 @@ const mysql = require("mysql2");
 const auth = require("./Routes/auth");
 const fileUpload = require("express-fileupload");
 const cors = require("cors");  
+const fs = require("fs")
 
 app.use(cors());
 
@@ -30,6 +31,8 @@ const connection = mysql.createConnection({
   user: "root",
   password: "",
 });
+
+fs.mkdirSync(__dirname + '/images', { recursive: true })
 
 connection.query(
   `CREATE DATABASE IF NOT EXISTS mummy_se_chupana`,

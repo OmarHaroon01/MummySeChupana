@@ -49,7 +49,8 @@ public class LoginActivity extends AppCompatActivity {
     public static ArrayList<FaceEntity> userLists = new ArrayList<>(0);
 
 
-    public static final String baseURL = "http://192.168.181.127:8000";
+    public static final String baseURL = "http://192.168.1.2:8000";
+    public static int totalUsers;
 
 
     GoogleSignInClient gsc;
@@ -78,6 +79,7 @@ public class LoginActivity extends AppCompatActivity {
                     for (int i = 0; i < allUsers.length(); i++) {
                         JSONObject obj = allUsers.getJSONObject(i);
                         int user_id = obj.getInt("userUNID");
+                        totalUsers = Math.max(totalUsers, obj.getInt("userUNID"));
                         String email = obj.getString("email");
                         URL url = new URL(baseURL+"/images/" + obj.getString("photo"));
                         Bitmap bitmap = BitmapFactory.decodeStream(url.openConnection().getInputStream());

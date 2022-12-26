@@ -1,10 +1,8 @@
 package com.ttv.facerecog
 
-import android.Manifest
 import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Build
@@ -16,6 +14,7 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.ttv.face.FaceEngine
+import com.ttv.face.FaceFeatureInfo
 import com.ttv.face.FaceResult
 import okhttp3.MediaType
 import okhttp3.MultipartBody
@@ -94,6 +93,27 @@ class MainActivity : AppCompatActivity(){
                     bitmapUri = getImageUri(this, bitmap)
                     val faceResults: MutableList<FaceResult> =
                         FaceEngine.getInstance(this).detectFace(bitmap)
+                    FaceEngine.getInstance(this@MainActivity)
+                        .extractFeature(bitmap, true, faceResults)
+                    val cropRect =
+                        Utils.getBestRect(bitmap.width, bitmap.height, faceResults[0].rect)
+                    val headImg = Utils.crop(
+                        bitmap,
+                        cropRect.left,
+                        cropRect.top,
+                        cropRect.width(),
+                        cropRect.height(),
+                        120,
+                        120
+                    )
+                    val face = FaceEntity(LoginActivity.totalUsers, email, headImg, faceResults[0].feature)
+                    LoginActivity.userLists.add(face)
+                    println(LoginActivity.userLists.toString())
+                    val faceFeatureInfo = FaceFeatureInfo(
+                        LoginActivity.totalUsers,
+                        faceResults[0].feature
+                    )
+                    FaceEngine.getInstance(this@MainActivity).registerFaceFeature(faceFeatureInfo)
                     if (faceResults.count() == 1) {
                         uploadToServer()
                     } else if (faceResults.count() > 1) {
